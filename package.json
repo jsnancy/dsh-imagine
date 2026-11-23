@@ -1,0 +1,67 @@
+{
+  "name": "dsh-image-studio",
+  "version": "0.2.0",
+  "private": false,
+  "description": "Draw images with the Codex (ChatGPT) subscription you already pay for — reads your plan and quota, generates PNGs locally, keeps a history.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.png"
+  },
+  "icon": "./icon.png",
+  "files": [
+    "lib",
+    "locale/*.json",
+    "docs",
+    "icon.png",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "image",
+    "image-generation",
+    "codex",
+    "chatgpt",
+    "text-to-image"
+  ],
+  "author": "jsnancy",
+  "engines": {
+    "node": ">=20.10.0",
+    "dsh": ">=0.2.0-rc.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "peerDependencies": {
+    "react": "^18.2.0 || ^19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/jsnancy/dsh-image-studio#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsnancy/dsh-image-studio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jsnancy/dsh-image-studio/issues"
+  }
+}
