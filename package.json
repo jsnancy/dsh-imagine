@@ -1,5 +1,5 @@
 {
-  "name": "dsh-image-studio",
+  "name": "dsh-imagegen",
   "version": "0.2.0",
   "private": false,
   "description": "Draw images with the Codex (ChatGPT) subscription you already pay for — reads your plan and quota, generates PNGs locally, keeps a history.",
@@ -56,12 +56,12 @@
     }
   },
   "license": "MIT",
-  "homepage": "https://github.com/jsnancy/dsh-image-studio#readme",
+  "homepage": "https://github.com/jsnancy/dsh-imagegen#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jsnancy/dsh-image-studio.git"
+    "url": "git+https://github.com/jsnancy/dsh-imagegen.git"
   },
   "bugs": {
-    "url": "https://github.com/jsnancy/dsh-image-studio/issues"
+    "url": "https://github.com/jsnancy/dsh-imagegen/issues"
   }
 }

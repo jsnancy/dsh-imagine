@@ -1,4 +1,4 @@
 # 生图工坊：Host 半边（额度读取、Codex 生图、图片落盘、两个工具）。浏览器半边由 package.json 的 dsh.client 声明加载。
 - insert:
     - id: image-studio
-      name: 'dsh-image-studio'
+      name: 'dsh-imagegen'
