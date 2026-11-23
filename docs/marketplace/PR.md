@@ -1,4 +1,4 @@
-# Add jsnancy/dsh-imagegen
+# Add jsnancy/dsh-imagine
 
 Image Studio lets DSH draw with the Codex (ChatGPT) subscription quota already
 signed in on the machine:
