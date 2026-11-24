@@ -1,6 +1,7 @@
 {
   "meta": {
     "title": "Image Studio",
-    "description": "Draw images with the Codex (ChatGPT) subscription you already pay for. It reads your plan, used quota and reset time, turns one prompt in the sidebar into a PNG saved on this machine, and keeps a history. No API key, no extra billing."
+    "description": "Draw images with the Codex (ChatGPT) subscription you already pay for. It reads your plan, used quota and reset time, turns one prompt in the sidebar into a PNG saved on this machine, and keeps a history. No API key, no extra billing.",
+    "detail": "docs/DETAIL.md"
   }
 }

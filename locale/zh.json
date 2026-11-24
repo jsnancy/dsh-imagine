@@ -1,6 +1,7 @@
 {
   "meta": {
     "title": "生图工坊",
-    "description": "用你已有的 Codex（ChatGPT）订阅额度直接生图：自动读出账号套餐、每周已用额度和重置时间，在侧栏写一句画面描述就能出图，PNG 存在本机并保留历史。不需要 API key，也不额外计费。"
+    "description": "用你已有的 Codex（ChatGPT）订阅额度直接生图：自动读出账号套餐、每周已用额度和重置时间，在侧栏写一句画面描述就能出图，PNG 存在本机并保留历史。不需要 API key，也不额外计费。",
+    "detail": "docs/DETAIL.zh.md"
   }
 }

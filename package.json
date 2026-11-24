@@ -1,6 +1,6 @@
 {
   "name": "dsh-imagine",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": false,
   "description": "Draw images with the Codex (ChatGPT) subscription you already pay for — reads your plan and quota, generates PNGs locally, keeps a history.",
   "type": "module",
@@ -21,6 +21,7 @@
     "icon.png",
     "cordis.patch.yml",
     "README.md",
+    "README.zh.md",
     "LICENSE"
   ],
   "keywords": [

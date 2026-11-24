@@ -1,56 +1,56 @@
-# 生图工坊 · Image Studio
+# Image Studio
 
-用你已经付费的 **Codex（ChatGPT 订阅）**额度直接生图。它做三件事：
+Draw images with the **Codex (ChatGPT subscription)** quota you already pay for. It does three things:
 
-1. **读出账号额度** —— 套餐、本周已用百分比、重置时间、可用重置卡，全部来自本机 Codex CLI 的官方接口，不需要另外登录或填 API key。
-2. **一句话出图** —— 在侧栏写画面描述，选画布与背景，生成结果直接落成 PNG 存到本机并显示在面板里。
-3. **留下历史** —— 每次生成的提示词、尺寸、耗时、token 用量都会记录，可复制描述、在访达中显示、下载或删除。
+1. **Reads the account quota** — plan, weekly usage, reset time and available reset credits, all from the Codex CLI interface on this machine. No extra sign-in, no API key.
+2. **Turns one prompt into an image** — describe the picture in the sidebar, pick a canvas and background, and the result is saved as a PNG on this machine and shown in the panel.
+3. **Keeps a history** — every render records its prompt, size, elapsed time and token usage. Copy the prompt, reveal the file in Finder, download or delete it.
 
-## 前置条件
+## Requirements
 
-- 本机装了 Codex CLI，并且已经用 ChatGPT 账号登录（`codex login status` 显示 `Logged in using ChatGPT`）。
-- 能连通 `chatgpt.com`。如果你的网络需要代理，插件会自动探测常见的本地代理端口；也可以在面板「设置」里手动指定或关闭代理。
+- Codex CLI installed and signed in with a ChatGPT account (`codex login status` prints `Logged in using ChatGPT`).
+- `chatgpt.com` reachable. If your network needs a proxy, the plugin auto-detects common local proxy ports; you can also choose or disable a proxy under Settings in the panel.
 
-## 使用
+## Using it
 
-侧栏点击「生图工坊」图标进入面板。面板分三块，左侧栏可直接跳转：
+Click the **Image Studio** icon in the sidebar. The panel has three sections, and the left rail jumps between them:
 
-- **生成图片**：写提示词 → 选画布（自动 / 竖屏 / 横屏 / 方形）与背景（不透明 / 透明）→ 点「生成」或按 `⌘/Ctrl + Enter`。提示词下方提供三条示例，点一下就填入。
-- **历史作品**：每次生成都是一张卡片，写着提示词、尺寸、体积与耗时。悬停图片会出现三个动作（在访达中显示、下载、删除），点图片进入全屏查看。
-- **账号与设置**：套餐、每周额度、重置时间与可用重置卡；设置里可切换代理模式（自动 / 关闭 / 手动）、指定 Codex 可执行文件路径，或切换面板语言（中文 / English）。
+- **Generate** — write a prompt, pick a canvas (auto / portrait / landscape / square) and a background (opaque / transparent), then press Generate or `⌘/Ctrl + Enter`. Three sample prompts sit under the box; click one to fill it in.
+- **History** — each render is a card with its prompt, dimensions, byte size and elapsed time. Hovering an image reveals three actions (reveal in Finder, download, delete); clicking it opens a full-screen viewer.
+- **Account & settings** — plan, weekly quota, reset time and reset credits; in settings you can switch the proxy mode (auto / off / custom), point at a specific Codex executable, or switch the panel language (中文 / English).
 
-首次使用如果账号没就绪，面板会给出登录引导。面板跟随 DSH 的浅色 / 深色主题，强调色会自动换档。
+If the account is not ready on first use, the panel shows a sign-in hint instead. The panel follows the DSH light/dark theme and shifts its accent colour with it.
 
-模型也可以直接调用这两个工具：
+The model can call the same two tools:
 
-| 工具 | 作用 | 主要参数 |
+| Tool | What it does | Main parameters |
 | --- | --- | --- |
-| `image_studio_generate` | 生成一张图片并保存 | `prompt`（必填）、`size`、`background` |
-| `image_studio_quota` | 读取当前账号额度 | 无 |
+| `image_studio_generate` | Generates one image and saves it | `prompt` (required), `size`, `background` |
+| `image_studio_quota` | Reads the current account quota | none |
 
-`image_studio_generate` 返回图片在本机的绝对路径、尺寸、字节数与耗时，方便后续打开或引用。
+`image_studio_generate` returns the absolute path of the file plus its dimensions, byte size and elapsed time, so follow-up steps can open or reference it.
 
-## 额度是怎么读的
+## How the quota is read
 
-插件启动本机 Codex CLI 的 `app-server` 子进程，走官方 JSON-RPC 方法 `account/rateLimits/read` 取回套餐与额度窗口。这是一次只读查询：不会刷新 token，不会消耗额度，也不会改动你的 Codex 配置。账号身份、套餐、额度结果在面板里缓存 60 秒。
+The plugin starts the local Codex CLI's `app-server` subprocess and calls the official JSON-RPC method `account/rateLimits/read` to fetch the plan and quota windows. It is a read-only query: it does not refresh tokens, does not spend quota, and does not modify your Codex configuration. Identity, plan and quota are cached in the panel for 60 seconds.
 
-## 图片存在哪
+## Where the images live
 
 ```
-$DSH_HOME/image-studio/images/<id>.png    # 生成的 PNG 原图
-$DSH_HOME/image-studio/index.json         # 历史索引（提示词、尺寸、耗时、用量）
-$DSH_HOME/image-studio/settings.json      # 面板设置
+$DSH_HOME/image-studio/images/<id>.png    # the generated PNG
+$DSH_HOME/image-studio/index.json         # history index (prompt, size, elapsed, usage)
+$DSH_HOME/image-studio/settings.json      # panel settings
 ```
 
-`$DSH_HOME` 默认是 `~/.dsh`。文件只留在本机，插件不上传、不收集任何内容；只有发起生图时，提示词会随请求发送到 `chatgpt.com`。
+`$DSH_HOME` defaults to `~/.dsh`. Files stay on this machine; the plugin uploads nothing and collects nothing. Only when you start a render does the prompt travel to `chatgpt.com` with the request.
 
-## 已知限制
+## Known limitations
 
-- **一次只出一张图**，并且尺寸是「建议值」：后端会按画面内容调整宽高比，实际尺寸以返回结果为准（面板会显示真实尺寸）。
-- **透明背景**通常对应后端更高的一档生成质量，出图耗时与 token 用量会更高。
-- 目前生图 provider 只有 Codex；Claude、WorkBuddy、Kimi 等订阅通道在面板里显示为「敬请期待」，接口层已经按 provider 预留。
-- 生成是串行的，一次请求通常十几秒，面板里会显示实时耗时。
+- **One image per request**, and the size is a *suggestion*: the backend adjusts the aspect ratio to suit the picture, so the returned dimensions win (the panel always shows the real ones).
+- **Transparent background** usually maps to a higher generation tier on the backend, so it costs more time and tokens.
+- Codex is the only image provider for now. Claude, WorkBuddy and Kimi appear as "coming soon" in the panel; the provider layer already has room for them.
+- Renders run one at a time and usually take a dozen seconds; the panel shows the elapsed time while it works.
 
-## 清理
+## Uninstalling
 
-在插件详情页卸载即可移除插件本体。若要同时删掉图片与历史，删除 `$DSH_HOME/image-studio` 目录。
+Remove the plugin from its detail page. To also drop the images and history, delete the `$DSH_HOME/image-studio` directory.
