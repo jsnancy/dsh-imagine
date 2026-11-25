@@ -1,6 +1,6 @@
 {
   "name": "dsh-imagine",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": false,
   "description": "Draw images with the Codex (ChatGPT) subscription you already pay for — reads your plan and quota, generates PNGs locally, keeps a history.",
   "type": "module",
@@ -37,7 +37,7 @@
   "author": "jsnancy",
   "engines": {
     "node": ">=20.10.0",
-    "dsh": ">=0.2.0-rc.1"
+    "dsh": ">=0.2.2-rc.1"
   },
   "dsh": {
     "bundle": {

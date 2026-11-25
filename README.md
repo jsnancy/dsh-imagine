@@ -34,6 +34,10 @@ plugin_manager: install_bundle, target: <absolute path to this package>
 
 A **Image Studio** icon shows up in the sidebar once installed. The host half mounts same-origin HTTP routes under `/image-studio`; the panel uses them to read quota, generate images and fetch them back.
 
+## Access control
+
+The `/image-studio` routes live on the host web server, so every request first passes through `ctx.connection.requestRejection()`: the plugin answers `401` when DSH wants a browser credential and `403` when the request is not an authenticated browser session, and fails closed if the host exposes no such check. The routes are therefore not callable from arbitrary web pages, and the plugin requires DSH `>= 0.2.2-rc.1`, the first release that provides this API.
+
 ## Requirements
 
 1. Codex CLI installed and signed in with a ChatGPT account — `codex login status` prints `Logged in using ChatGPT`.

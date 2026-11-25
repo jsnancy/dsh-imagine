@@ -4,10 +4,12 @@ import { apply } from '../lib/index.js'
 
 const routes = []
 const tools = []
+let rejection = undefined
 const ctx = {
   effect(fn) { const d = fn(); return () => d && d() },
   webServer: { register(route) { routes.push(route); return () => {} } },
   tools: { register(tool) { tools.push(tool); return () => {} } },
+  connection: { requestRejection() { return rejection } },
 }
 apply(ctx)
 console.log('routes:', routes.map((r) => `${r.kind}:${r.path}`), 'tools:', tools.map((t) => t.name))
@@ -39,6 +41,16 @@ console.log('status:', status.status, JSON.stringify({
 }, null, 2))
 
 const mode = process.argv[2] || 'quick'
+
+// 鉴权：Connection 拒绝时必须直接返回 401/403，不能进入业务逻辑
+rejection = 403
+const denied = await call('GET', '/api/status')
+console.log('denied(403) ->', denied.status, denied.text)
+rejection = 401
+const denied401 = await call('GET', '/api/status')
+console.log('denied(401) ->', denied401.status, denied401.text)
+rejection = undefined
+
 if (mode === 'full') {
   const gen = await call('POST', '/api/generate', { prompt: '极简海报：深蓝夜空下的一盏台灯，扁平插画', size: '1024x1536' })
   console.log('generate:', gen.status, JSON.stringify(gen.json ? (gen.json.ok ? { ok: true, image: gen.json.image, usage: gen.json.usage } : gen.json) : gen.text.slice(0, 200), null, 2))

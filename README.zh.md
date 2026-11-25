@@ -34,6 +34,10 @@ plugin_manager: install_bundle, target: <本包绝对目录>
 
 安装后侧栏出现「生图工坊」图标。Host 半在 `/image-studio` 挂同源 HTTP 路由，面板通过它读取额度、生图、取图。
 
+## 访问控制
+
+`/image-studio` 路由挂在宿主 web server 上，每个请求都先过 `ctx.connection.requestRejection()`：需要浏览器凭证时返回 `401`，不是已认证的浏览器会话时返回 `403`；宿主没有提供这项检查时插件一律拒绝。因此这些路由无法被普通网页直接调用，插件要求 DSH `>= 0.2.2-rc.1`（首个提供该 API 的版本）。
+
 ## 前置条件
 
 1. 本机装了 Codex CLI，并且已经用 ChatGPT 账号登录：`codex login status` 显示 `Logged in using ChatGPT`。
