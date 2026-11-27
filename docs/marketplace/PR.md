@@ -30,7 +30,7 @@ can be re-rendered at any size.
 
 ---
 
-## 0.5.0 更新（维护市场条目用）
+## 0.5.1 更新（维护市场条目用）
 
 市场数据目录里 `data/plugins/jsnancy__dsh-imagine.yml` **已经存在**（旧描述只提到
 “额度 + 生图 + 历史”），这次只需要改描述，不用新增条目。可直接应用的补丁：

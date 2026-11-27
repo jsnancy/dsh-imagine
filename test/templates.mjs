@@ -128,7 +128,7 @@ if (process.argv.includes('--net')) {
 console.log('\nstatus')
 const status = await call('GET', '/templates/status')
 check('200', status.status === 200, status.json)
-check('插件版本 0.5.0', status.json && status.json.version === '0.5.0', status.json && status.json.version)
+check('插件版本 0.5.1', status.json && status.json.version === '0.5.1', status.json && status.json.version)
 check('缓存字段齐全', status.json && typeof status.json.cached === 'number' && typeof status.json.assets === 'number', status.json && { cached: status.json.cached, assets: status.json.assets })
 check('同步状态可查', status.json && status.json.sync && status.json.sync.running === false, status.json && status.json.sync)
 check('能力状态可查', status.json && status.json.capability && typeof status.json.capability.state === 'string', status.json && status.json.capability)
