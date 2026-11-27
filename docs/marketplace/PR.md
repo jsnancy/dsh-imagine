@@ -49,3 +49,16 @@ icon: https://raw.githubusercontent.com/jsnancy/dsh-imagine/main/icon.png
 提交步骤（在 <https://github.com/awesome-dsh-plugin/awesome-dsh-plugin> 上）：
 fork → 改 `data/plugins/jsnancy__dsh-imagine.yml` → 提 PR，说明用上面这段描述；
 同一分支跑 `npm ci && node scripts/check-submission.mjs` 需要 `GITHUB_TOKEN`。
+
+## npm 发布记录（0.5.1）
+
+`npm publish` 返回 `202`/`409 Cannot publish over previously staged version`：这个是
+Granular Access Token + npm 新策略（[bypass-2FA token 限制](https://gh.io/npm-gat-bypass2fa-deprecation)）
+导致的「staged publish”，需要在 npm 网页上确认，或用带 2FA 的交互式登录发布：
+
+```bash
+npm login            # 交互式，2FA 通过
+npm publish --access public
+```
+
+GitHub 侧（市场按仓库安装）不受影响，`main` 上已是 0.5.1。
