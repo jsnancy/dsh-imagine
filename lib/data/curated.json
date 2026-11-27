@@ -1,0 +1,1030 @@
+{
+ "version": 1,
+ "source": {
+  "repo": "https://github.com/yang0/handraw-style",
+  "version": "1.9.13",
+  "author": "yang0"
+ },
+ "items": [
+  {
+   "id": "CT-01",
+   "domain": "knowledge",
+   "domainLabel": "知识科普",
+   "title": "三分钟读懂一个概念",
+   "themeHint": "为什么潮汐每天会晚 50 分钟",
+   "layout": "IG-032",
+   "style": "FH-002",
+   "color": "C-04",
+   "tone": "T-01",
+   "ratio": "4:5",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-032.webp"
+   },
+   "chars": 332
+  },
+  {
+   "id": "CT-02",
+   "domain": "knowledge",
+   "domainLabel": "知识科普",
+   "title": "五个误区逐个拆",
+   "themeHint": "关于喝水的 5 个误区",
+   "layout": "IG-003",
+   "style": "FA-002",
+   "color": "C-15",
+   "tone": "T-07",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-003.webp"
+   },
+   "chars": 239
+  },
+  {
+   "id": "CT-03",
+   "domain": "knowledge",
+   "domainLabel": "知识科普",
+   "title": "一条时间轴讲清来龙去脉",
+   "themeHint": "咖啡是怎么从埃塞俄比亚走到全世界的",
+   "layout": "IG-009",
+   "style": "FB-008",
+   "color": "C-06",
+   "tone": "T-09",
+   "ratio": "9:16",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-009.webp"
+   },
+   "chars": 117
+  },
+  {
+   "id": "CT-04",
+   "domain": "knowledge",
+   "domainLabel": "知识科普",
+   "title": "从 0 到 1 的步骤流程",
+   "themeHint": "第一次做手冲咖啡的四步",
+   "layout": "IG-008",
+   "style": "FH-003",
+   "color": "C-11",
+   "tone": "T-13",
+   "ratio": "4:5",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-008.webp"
+   },
+   "chars": 117
+  },
+  {
+   "id": "CT-05",
+   "domain": "knowledge",
+   "domainLabel": "知识科普",
+   "title": "一图看懂名词之间的关系",
+   "themeHint": "前端、后端、运维到底谁管什么",
+   "layout": "IG-017",
+   "style": "FC-008",
+   "color": "C-23",
+   "tone": "T-04",
+   "ratio": "1:1",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-017.webp"
+   },
+   "chars": 111
+  },
+  {
+   "id": "CT-06",
+   "domain": "knowledge",
+   "domainLabel": "知识科普",
+   "title": "三个数字讲清规模",
+   "themeHint": "3 个数字看懂一座城市的地铁",
+   "layout": "IG-022",
+   "style": "FC-005",
+   "color": "C-25",
+   "tone": "T-05",
+   "ratio": "4:5",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-022.webp"
+   },
+   "chars": 92
+  },
+  {
+   "id": "CT-07",
+   "domain": "knowledge",
+   "domainLabel": "知识科普",
+   "title": "大小对比：这事到底多夸张",
+   "themeHint": "把 1 纳米放大到 1 米有多长",
+   "layout": "IG-025",
+   "style": "FA-010",
+   "color": "C-02",
+   "tone": "T-06",
+   "ratio": "4:3",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-025.webp"
+   },
+   "chars": 100
+  },
+  {
+   "id": "CT-08",
+   "domain": "knowledge",
+   "domainLabel": "知识科普",
+   "title": "一座城的常识地图",
+   "themeHint": "在成都待三天该吃什么",
+   "layout": "IG-034",
+   "style": "FD-005",
+   "color": "C-29",
+   "tone": "T-10",
+   "ratio": "16:9",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-034.webp"
+   },
+   "chars": 728
+  },
+  {
+   "id": "CT-09",
+   "domain": "knowledge",
+   "domainLabel": "知识科普",
+   "title": "讲义级高密度知识卡",
+   "themeHint": "一页讲完光合作用",
+   "layout": "IG-033",
+   "style": "FH-002",
+   "color": "C-31",
+   "tone": "T-09",
+   "ratio": "9:16",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-033.webp"
+   },
+   "chars": 293
+  },
+  {
+   "id": "CT-10",
+   "domain": "knowledge",
+   "domainLabel": "知识科普",
+   "title": "一本书的读后笔记",
+   "themeHint": "《人类简史》最值得记的 3 句话",
+   "layout": "SC-023",
+   "style": "FE-005",
+   "color": "C-34",
+   "tone": "T-04",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SC-023.webp"
+   },
+   "chars": 431
+  },
+  {
+   "id": "CT-11",
+   "domain": "knowledge",
+   "domainLabel": "知识科普",
+   "title": "万物图鉴式科普",
+   "themeHint": "认识 8 种常见的云",
+   "layout": "IG-031",
+   "style": "FB-007",
+   "color": "C-12",
+   "tone": "T-01",
+   "ratio": "4:5",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-031.webp"
+   },
+   "chars": 223
+  },
+  {
+   "id": "CT-12",
+   "domain": "knowledge",
+   "domainLabel": "知识科普",
+   "title": "一张图讲完整个故事线",
+   "themeHint": "一部电影的三幕结构",
+   "layout": "IG-028",
+   "style": "FB-001",
+   "color": "C-21",
+   "tone": "T-14",
+   "ratio": "21:9",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-028.webp"
+   },
+   "chars": 105
+  },
+  {
+   "id": "CT-13",
+   "domain": "work",
+   "domainLabel": "职场 · 商业",
+   "title": "季度复盘做成一张图",
+   "themeHint": "这一年我们做对了什么、做错了什么",
+   "layout": "IG-004",
+   "style": "FA-001",
+   "color": "C-33",
+   "tone": "T-09",
+   "ratio": "4:5",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-004.webp"
+   },
+   "chars": 76
+  },
+  {
+   "id": "CT-14",
+   "domain": "work",
+   "domainLabel": "职场 · 商业",
+   "title": "A/B 两条路怎么选",
+   "themeHint": "自建还是买现成，两条路的三年账",
+   "layout": "IG-011",
+   "style": "FB-010",
+   "color": "C-32",
+   "tone": "T-08",
+   "ratio": "4:3",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-011.webp"
+   },
+   "chars": 161
+  },
+  {
+   "id": "CT-15",
+   "domain": "work",
+   "domainLabel": "职场 · 商业",
+   "title": "组织分层与职责说明",
+   "themeHint": "一个项目里谁对什么负责",
+   "layout": "IG-012",
+   "style": "FC-003",
+   "color": "C-35",
+   "tone": "T-07",
+   "ratio": "4:5",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-012.webp"
+   },
+   "chars": 153
+  },
+  {
+   "id": "CT-16",
+   "domain": "work",
+   "domainLabel": "职场 · 商业",
+   "title": "四象限优先级判断",
+   "themeHint": "这周该先做哪件事",
+   "layout": "IG-014",
+   "style": "FC-009",
+   "color": "C-18",
+   "tone": "T-05",
+   "ratio": "1:1",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-014.webp"
+   },
+   "chars": 146
+  },
+  {
+   "id": "CT-17",
+   "domain": "work",
+   "domainLabel": "职场 · 商业",
+   "title": "数据趋势里的三个异常",
+   "themeHint": "用户留存掉的那三天发生了什么",
+   "layout": "IG-015",
+   "style": "FA-010",
+   "color": "C-03",
+   "tone": "T-09",
+   "ratio": "4:3",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-015.webp"
+   },
+   "chars": 147
+  },
+  {
+   "id": "CT-18",
+   "domain": "work",
+   "domainLabel": "职场 · 商业",
+   "title": "排行榜：今年前十",
+   "themeHint": "今年最值得买的十件小家电",
+   "layout": "IG-023",
+   "style": "FA-004",
+   "color": "C-28",
+   "tone": "T-07",
+   "ratio": "4:5",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-023.webp"
+   },
+   "chars": 101
+  },
+  {
+   "id": "CT-19",
+   "domain": "work",
+   "domainLabel": "职场 · 商业",
+   "title": "预算构成怎么分",
+   "themeHint": "一万块钱的营销预算怎么分",
+   "layout": "IG-024",
+   "style": "FC-004",
+   "color": "C-20",
+   "tone": "T-04",
+   "ratio": "1:1",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-024.webp"
+   },
+   "chars": 95
+  },
+  {
+   "id": "CT-20",
+   "domain": "work",
+   "domainLabel": "职场 · 商业",
+   "title": "产品是怎么做出来的",
+   "themeHint": "一双跑鞋的 6 层结构",
+   "layout": "IG-026",
+   "style": "FD-003",
+   "color": "C-13",
+   "tone": "T-01",
+   "ratio": "4:3",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IG-026.webp"
+   },
+   "chars": 110
+  },
+  {
+   "id": "CT-21",
+   "domain": "work",
+   "domainLabel": "职场 · 商业",
+   "title": "汇报封面：一句话结论",
+   "themeHint": "我们决定把首页重做一遍",
+   "layout": "SC-006",
+   "style": "FB-001",
+   "color": "C-01",
+   "tone": "T-09",
+   "ratio": "16:9",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SC-006.webp"
+   },
+   "chars": 75
+  },
+  {
+   "id": "CT-22",
+   "domain": "work",
+   "domainLabel": "职场 · 商业",
+   "title": "招募 / 认领说明卡",
+   "themeHint": "我们在找一个愿意慢慢做事的人",
+   "layout": "SC-010",
+   "style": "FC-008",
+   "color": "C-26",
+   "tone": "T-13",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SC-010.webp"
+   },
+   "chars": 120
+  },
+  {
+   "id": "CT-23",
+   "domain": "life",
+   "domainLabel": "生活方式 · 情绪",
+   "title": "一句心情配一张小画",
+   "themeHint": "今天不太想说话，但饭还是要吃",
+   "layout": "SC-016",
+   "style": "FA-021",
+   "color": "C-22",
+   "tone": "T-04",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SC-016.webp"
+   },
+   "chars": 337
+  },
+  {
+   "id": "CT-24",
+   "domain": "life",
+   "domainLabel": "生活方式 · 情绪",
+   "title": "今天发生的一件小事",
+   "themeHint": "楼下的猫终于在第三年让我摸了一下",
+   "layout": "SC-001",
+   "style": "FA-009",
+   "color": "C-34",
+   "tone": "T-16",
+   "ratio": "4:5",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SC-001.webp"
+   },
+   "chars": 77
+  },
+  {
+   "id": "CT-25",
+   "domain": "life",
+   "domainLabel": "生活方式 · 情绪",
+   "title": "金句卡",
+   "themeHint": "慢一点也没关系",
+   "layout": "SC-007",
+   "style": "FE-003",
+   "color": "C-30",
+   "tone": "T-01",
+   "ratio": "1:1",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SC-007.webp"
+   },
+   "chars": 86
+  },
+  {
+   "id": "CT-26",
+   "domain": "life",
+   "domainLabel": "生活方式 · 情绪",
+   "title": "生活方式清单卡",
+   "themeHint": "让我撑过这个月的 7 件小事",
+   "layout": "SC-017",
+   "style": "FA-005",
+   "color": "C-10",
+   "tone": "T-08",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SC-017.webp"
+   },
+   "chars": 102
+  },
+  {
+   "id": "CT-27",
+   "domain": "life",
+   "domainLabel": "生活方式 · 情绪",
+   "title": "旅行照片转手绘",
+   "themeHint": "在海边住了三天",
+   "layout": "SC-021",
+   "style": "FD-006",
+   "color": "C-08",
+   "tone": "T-14",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SC-021.webp"
+   },
+   "chars": 2221
+  },
+  {
+   "id": "CT-28",
+   "domain": "life",
+   "domainLabel": "生活方式 · 情绪",
+   "title": "两个人之间的一件小事",
+   "themeHint": "我们家的周末分工（并没有分工）",
+   "layout": "SC-025",
+   "style": "FH-006",
+   "color": "C-19",
+   "tone": "T-04",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SC-025.webp"
+   },
+   "chars": 34
+  },
+  {
+   "id": "CT-29",
+   "domain": "life",
+   "domainLabel": "生活方式 · 情绪",
+   "title": "节气 / 季节问候",
+   "themeHint": "立冬：把秋天最后一片叶子留住",
+   "layout": "SC-008",
+   "style": "FE-005",
+   "color": "C-09",
+   "tone": "T-10",
+   "ratio": "4:5",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SC-008.webp"
+   },
+   "chars": 84
+  },
+  {
+   "id": "CT-30",
+   "domain": "life",
+   "domainLabel": "生活方式 · 情绪",
+   "title": "日记式配图",
+   "themeHint": "第十一天，我开始记得他吃药的时间",
+   "layout": "SC-020",
+   "style": "FH-007",
+   "color": "C-36",
+   "tone": "T-16",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SC-020.webp"
+   },
+   "chars": 364
+  },
+  {
+   "id": "CT-31",
+   "domain": "life",
+   "domainLabel": "生活方式 · 情绪",
+   "title": "读书摘抄",
+   "themeHint": "我们都在用自己的方式变勇敢",
+   "layout": "SC-015",
+   "style": "FH-008",
+   "color": "C-14",
+   "tone": "T-08",
+   "ratio": "4:5",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SC-015.webp"
+   },
+   "chars": 368
+  },
+  {
+   "id": "CT-32",
+   "domain": "life",
+   "domainLabel": "生活方式 · 情绪",
+   "title": "一次小改变的前后对比",
+   "themeHint": "早睡两周以后",
+   "layout": "SC-024",
+   "style": "FB-002",
+   "color": "C-07",
+   "tone": "T-13",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SC-024.webp"
+   },
+   "chars": 94
+  },
+  {
+   "id": "CT-33",
+   "domain": "commerce",
+   "domainLabel": "产品 · 电商",
+   "title": "新品主视觉 KV",
+   "themeHint": "一双为通勤做的鞋",
+   "layout": "EC-024",
+   "style": "FI-001",
+   "color": "C-32",
+   "tone": "T-05",
+   "ratio": "16:9",
+   "mode": "pure-image",
+   "cover": {
+    "local": "EC-024.webp"
+   },
+   "chars": 328
+  },
+  {
+   "id": "CT-34",
+   "domain": "commerce",
+   "domainLabel": "产品 · 电商",
+   "title": "单品主图（白底）",
+   "themeHint": "一只陶瓷马克杯",
+   "layout": "EC-001",
+   "style": "FI-002",
+   "color": "C-34",
+   "tone": "T-01",
+   "ratio": "1:1",
+   "mode": "pure-image",
+   "cover": {
+    "local": "EC-001.webp"
+   },
+   "chars": 217
+  },
+  {
+   "id": "CT-35",
+   "domain": "commerce",
+   "domainLabel": "产品 · 电商",
+   "title": "材质与结构解析",
+   "themeHint": "这件外套的四层结构",
+   "layout": "EC-008",
+   "style": "FI-004",
+   "color": "C-36",
+   "tone": "T-09",
+   "ratio": "4:3",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "EC-008.webp"
+   },
+   "chars": 255
+  },
+  {
+   "id": "CT-36",
+   "domain": "commerce",
+   "domainLabel": "产品 · 电商",
+   "title": "卖点标注图",
+   "themeHint": "这把伞为什么淋不湿肩膀",
+   "layout": "EC-005",
+   "style": "FG-005",
+   "color": "C-25",
+   "tone": "T-07",
+   "ratio": "4:5",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "EC-005.webp"
+   },
+   "chars": 243
+  },
+  {
+   "id": "CT-37",
+   "domain": "commerce",
+   "domainLabel": "产品 · 电商",
+   "title": "使用步骤 / 教程",
+   "themeHint": "三步让新锅不粘",
+   "layout": "EC-012",
+   "style": "FC-010",
+   "color": "C-12",
+   "tone": "T-13",
+   "ratio": "4:5",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "EC-012.webp"
+   },
+   "chars": 239
+  },
+  {
+   "id": "CT-38",
+   "domain": "commerce",
+   "domainLabel": "产品 · 电商",
+   "title": "生活方式场景图",
+   "themeHint": "周末早上的一杯咖啡",
+   "layout": "EC-009",
+   "style": "FI-003",
+   "color": "C-30",
+   "tone": "T-14",
+   "ratio": "4:5",
+   "mode": "pure-image",
+   "cover": {
+    "local": "EC-009.webp"
+   },
+   "chars": 235
+  },
+  {
+   "id": "CT-39",
+   "domain": "commerce",
+   "domainLabel": "产品 · 电商",
+   "title": "包装与内容物展示",
+   "themeHint": "中秋礼盒里有什么",
+   "layout": "EC-004",
+   "style": "FI-008",
+   "color": "C-21",
+   "tone": "T-01",
+   "ratio": "3:4",
+   "mode": "pure-image",
+   "cover": {
+    "local": "EC-004.webp"
+   },
+   "chars": 213
+  },
+  {
+   "id": "CT-40",
+   "domain": "commerce",
+   "domainLabel": "产品 · 电商",
+   "title": "促销活动主视觉",
+   "themeHint": "双 11：全年最划算的四件",
+   "layout": "EC-022",
+   "style": "FC-002",
+   "color": "C-16",
+   "tone": "T-06",
+   "ratio": "4:5",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "EC-022.webp"
+   },
+   "chars": 243
+  },
+  {
+   "id": "CT-41",
+   "domain": "commerce",
+   "domainLabel": "产品 · 电商",
+   "title": "对比优势图",
+   "themeHint": "我们的和不粘锅到底差在哪",
+   "layout": "EC-013",
+   "style": "FC-006",
+   "color": "C-05",
+   "tone": "T-05",
+   "ratio": "4:3",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "EC-013.webp"
+   },
+   "chars": 255
+  },
+  {
+   "id": "CT-42",
+   "domain": "commerce",
+   "domainLabel": "产品 · 电商",
+   "title": "品牌来源故事",
+   "themeHint": "这个酱油厂已经开了 60 年",
+   "layout": "EC-020",
+   "style": "FB-004",
+   "color": "C-27",
+   "tone": "T-14",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "EC-020.webp"
+   },
+   "chars": 219
+  },
+  {
+   "id": "CT-43",
+   "domain": "ip",
+   "domainLabel": "IP · 品牌",
+   "title": "给一个形象做定位卡",
+   "themeHint": "一只住在美术馆的猫",
+   "layout": "IP-001",
+   "style": "FF-001",
+   "color": "C-16",
+   "tone": "T-07",
+   "ratio": "1:1",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IP-001.webp"
+   },
+   "chars": 370
+  },
+  {
+   "id": "CT-44",
+   "domain": "ip",
+   "domainLabel": "IP · 品牌",
+   "title": "角色三视图",
+   "themeHint": "主角的正面、侧面、背面",
+   "layout": "IP-002",
+   "style": "FF-003",
+   "color": "C-31",
+   "tone": "T-01",
+   "ratio": "16:9",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IP-002.webp"
+   },
+   "chars": 190
+  },
+  {
+   "id": "CT-45",
+   "domain": "ip",
+   "domainLabel": "IP · 品牌",
+   "title": "表情包 16 宫格",
+   "themeHint": "上班摸鱼的 16 种表情",
+   "layout": "IP-003",
+   "style": "FF-008",
+   "color": "C-27",
+   "tone": "T-13",
+   "ratio": "1:1",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IP-003.webp"
+   },
+   "chars": 17
+  },
+  {
+   "id": "CT-46",
+   "domain": "ip",
+   "domainLabel": "IP · 品牌",
+   "title": "一日生活相册",
+   "themeHint": "小怪兽的一天",
+   "layout": "IP-009",
+   "style": "FF-007",
+   "color": "C-22",
+   "tone": "T-16",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IP-009.webp"
+   },
+   "chars": 48
+  },
+  {
+   "id": "CT-47",
+   "domain": "ip",
+   "domainLabel": "IP · 品牌",
+   "title": "角色家族合影",
+   "themeHint": "这一家四口",
+   "layout": "IP-006",
+   "style": "FF-005",
+   "color": "C-23",
+   "tone": "T-14",
+   "ratio": "16:9",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IP-006.webp"
+   },
+   "chars": 38
+  },
+  {
+   "id": "CT-48",
+   "domain": "ip",
+   "domainLabel": "IP · 品牌",
+   "title": "社交主页界面",
+   "themeHint": "一个小号的第 100 天",
+   "layout": "IP-012",
+   "style": "FF-002",
+   "color": "C-09",
+   "tone": "T-01",
+   "ratio": "9:16",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IP-012.webp"
+   },
+   "chars": 24
+  },
+  {
+   "id": "CT-49",
+   "domain": "ip",
+   "domainLabel": "IP · 品牌",
+   "title": "商业应用 mockup",
+   "themeHint": "印在帆布包上的样子",
+   "layout": "IP-007",
+   "style": "FF-004",
+   "color": "C-25",
+   "tone": "T-05",
+   "ratio": "4:3",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IP-007.webp"
+   },
+   "chars": 54
+  },
+  {
+   "id": "CT-50",
+   "domain": "ip",
+   "domainLabel": "IP · 品牌",
+   "title": "招牌体态与动作力线",
+   "themeHint": "他的三个招牌动作",
+   "layout": "IP-013",
+   "style": "FG-003",
+   "color": "C-17",
+   "tone": "T-03",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "IP-013.webp"
+   },
+   "chars": 40
+  },
+  {
+   "id": "CT-51",
+   "domain": "story",
+   "domainLabel": "漫画 · 叙事",
+   "title": "四格起承转合",
+   "themeHint": "第一次自己修好水龙头",
+   "layout": "SB-002",
+   "style": "FD-002",
+   "color": "C-31",
+   "tone": "T-08",
+   "ratio": "1:1",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SB-002.webp"
+   },
+   "chars": 105
+  },
+  {
+   "id": "CT-52",
+   "domain": "story",
+   "domainLabel": "漫画 · 叙事",
+   "title": "一镜到底的小故事",
+   "themeHint": "从家门口到菜市场的 6 分钟",
+   "layout": "SB-016",
+   "style": "FH-009",
+   "color": "C-33",
+   "tone": "T-09",
+   "ratio": "16:9",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SB-016.webp"
+   },
+   "chars": 104
+  },
+  {
+   "id": "CT-53",
+   "domain": "story",
+   "domainLabel": "漫画 · 叙事",
+   "title": "三格竖版生活漫画",
+   "themeHint": "早上多睡十分钟的代价",
+   "layout": "SB-071",
+   "style": "FH-010",
+   "color": "C-34",
+   "tone": "T-04",
+   "ratio": "9:16",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SB-071.webp"
+   },
+   "chars": 205
+  },
+  {
+   "id": "CT-54",
+   "domain": "story",
+   "domainLabel": "漫画 · 叙事",
+   "title": "四格竖版日常",
+   "themeHint": "我妈第一次用外卖软件",
+   "layout": "SB-070",
+   "style": "FD-007",
+   "color": "C-21",
+   "tone": "T-13",
+   "ratio": "9:16",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SB-070.webp"
+   },
+   "chars": 205
+  },
+  {
+   "id": "CT-55",
+   "domain": "story",
+   "domainLabel": "漫画 · 叙事",
+   "title": "两格竖版情绪对照",
+   "themeHint": "周日下午三点和周一早上八点",
+   "layout": "SB-069",
+   "style": "FA-008",
+   "color": "C-32",
+   "tone": "T-12",
+   "ratio": "9:16",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SB-069.webp"
+   },
+   "chars": 205
+  },
+  {
+   "id": "CT-56",
+   "domain": "story",
+   "domainLabel": "漫画 · 叙事",
+   "title": "节奏骤停的悬念页",
+   "themeHint": "门开了一条缝",
+   "layout": "SB-030",
+   "style": "FH-001",
+   "color": "C-24",
+   "tone": "T-15",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SB-030.webp"
+   },
+   "chars": 104
+  },
+  {
+   "id": "CT-57",
+   "domain": "story",
+   "domainLabel": "漫画 · 叙事",
+   "title": "时间轴式叙事",
+   "themeHint": "一棵树的二十年",
+   "layout": "SB-044",
+   "style": "FB-003",
+   "color": "C-29",
+   "tone": "T-16",
+   "ratio": "4:3",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SB-044.webp"
+   },
+   "chars": 101
+  },
+  {
+   "id": "CT-58",
+   "domain": "story",
+   "domainLabel": "漫画 · 叙事",
+   "title": "底部留白收尾页",
+   "themeHint": "他终于关上了那盏灯",
+   "layout": "SB-005",
+   "style": "FB-005",
+   "color": "C-35",
+   "tone": "T-15",
+   "ratio": "16:9",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SB-005.webp"
+   },
+   "chars": 106
+  },
+  {
+   "id": "CT-59",
+   "domain": "story",
+   "domainLabel": "漫画 · 叙事",
+   "title": "无框自由漂浮的分镜",
+   "themeHint": "那些没说出口的话",
+   "layout": "SB-052",
+   "style": "FB-009",
+   "color": "C-24",
+   "tone": "T-10",
+   "ratio": "4:3",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SB-052.webp"
+   },
+   "chars": 104
+  },
+  {
+   "id": "CT-60",
+   "domain": "story",
+   "domainLabel": "漫画 · 叙事",
+   "title": "白场留白的安静故事",
+   "themeHint": "一个人吃完一顿饭",
+   "layout": "SB-054",
+   "style": "FD-004",
+   "color": "C-34",
+   "tone": "T-01",
+   "ratio": "3:4",
+   "mode": "graphic-text",
+   "cover": {
+    "local": "SB-054.webp"
+   },
+   "chars": 104
+  }
+ ]
+}

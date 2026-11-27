@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "生图工坊",
-    "description": "用你已有的 Codex（ChatGPT）订阅额度直接生图：自动读出账号套餐、每周已用额度和重置时间，在侧栏写一句画面描述就能出图，PNG 存在本机并保留历史。不需要 API key，也不额外计费。",
+    "title": "十六跟做图",
+    "description": "读取本机已有的 Codex（ChatGPT 订阅）额度直接生图，并内置一套可以一键跟做的手绘模板库（handraw-style，594 条素材 + 60 个配方）；界面是手绘纸皮肤，深浅主题各有一套。不需要 API key，不额外计费。",
     "detail": "docs/DETAIL.zh.md"
   }
 }

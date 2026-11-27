@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Image Studio",
-    "description": "Draw images with the Codex (ChatGPT) subscription you already pay for. It reads your plan, used quota and reset time, turns one prompt in the sidebar into a PNG saved on this machine, and keeps a history. No API key, no extra billing.",
+    "title": "Template Studio",
+    "description": "Draw with the Codex (ChatGPT) subscription you already have, plus a hand-drawn template library you can follow in one click (handraw-style, 594 assets + 60 recipes). The panel itself wears a hand-drawn paper skin in both light and dark themes. No API key, no extra billing.",
     "detail": "docs/DETAIL.md"
   }
 }

@@ -1,1 +1,13 @@
-["docs/shots/panel-dark.png", "docs/shots/panel-light.png", "docs/shots/history-dark.png"]
+[
+"docs/shots/panel-dark.png",
+"docs/shots/panel-light.png",
+"docs/shots/history-dark.png",
+"docs/shots/templates-dark.png",
+"docs/shots/follow-dark.png",
+"docs/shots/preview-dark.png",
+"docs/shots/studio-templates-dark.png",
+"docs/shots/picker-dark.png",
+"docs/shots/favorites-dark.png",
+"docs/shots/settings-cache-dark.png",
+"docs/shots/templates-light.png"
+]

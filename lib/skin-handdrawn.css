@@ -1,0 +1,1344 @@
+/* ============================================================================
+   十六跟做图 · 手绘风皮肤（方案稿，仅用于效果预览，未落地）
+   思路：暖纸底 + 炭笔描边 + 马克笔高亮 + 手写字体，边框用不规则圆角模拟手抖，
+   卡片加纸片阴影与微旋转，题头用手绘波浪线代替现代渐变下划线。
+   ========================================================================== */
+
+html body {
+  --hd-hand: 'HanziPen SC', 'Hannotate SC', cursive;
+  --hd-text: 'Hannotate SC', 'HanziPen SC', sans-serif;
+  --hd-num: 'Bradley Hand', 'Chalkboard SE', cursive;
+
+  --isx-paper: #fbf6ea;
+  --isx-paper-2: #f4ecdb;
+  --isx-ink: #2e2823;
+  --isx-text-2: #574c3f;
+  --isx-text-3: #8b7c67;
+  --isx-text-placeholder: #a99a80;
+  --isx-line: #e0d0b0;
+  --isx-line-subtle: #ecdfc4;
+  --isx-line-strong: #c6b18e;
+  --isx-accent: #cf4a32;
+  --isx-accent-on: #fff8ef;
+  --isx-grey: #cbbda4;
+  --hd-marker: #ffd966;
+  --hd-marker-soft: var(--hd-marker-soft);
+  --hd-red: #cf4a32;
+  --hd-blue: #3f6f9c;
+  --hd-shadow: 2px 2px 0 var(--hd-shadow-color);
+  --isx-font: var(--hd-text);
+  --isx-mono: var(--hd-num);
+
+  /* 手绘皮肤专用变量（浅色：纸） */
+  --hd-surface: var(--hd-surface);
+  --hd-surface-2: var(--hd-surface-2);
+  --hd-text-strong: var(--hd-text-strong);
+  --hd-tint-1: var(--hd-tint-1);
+  --hd-tint-2: var(--hd-tint-2);
+  --hd-tint-3: var(--hd-tint-3);
+  --hd-tint-4: var(--hd-tint-4);
+  --hd-tape-bg: var(--hd-tape-bg);
+  --hd-tape-border: var(--hd-tape-border);
+  --hd-grid-x: var(--hd-grid-x);
+  --hd-grid-y: var(--hd-grid-y);
+  --hd-grid-soft: var(--hd-grid-soft);
+  --hd-shadow-color: var(--hd-shadow-color);
+  --hd-shadow-soft: var(--hd-shadow-soft);
+  --hd-shadow-strong: var(--hd-shadow-strong);
+  --hd-scrim: var(--hd-scrim);
+  --hd-vignette: var(--hd-vignette);
+  --hd-noise-opacity: 0.05;
+  --hd-paper-glow: var(--hd-surface-2);
+  --hd-paper-edge: #f6ecd6;
+  --hd-veil: rgba(255, 253, 247, 0.82);
+  --hd-veil-soft: rgba(252, 246, 234, 0.72);
+  --hd-rail-veil: rgba(255, 251, 240, 0.9);
+  --hd-hover: rgba(255, 255, 255, 0.55);
+  --hd-inset: rgba(255, 248, 239, 0.35);
+}
+
+/* ── 纸面 ─────────────────────────────────────────────────────────────── */
+html body .isx-root {
+  background-color: var(--isx-paper);
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.05'/></svg>"),
+    radial-gradient(120% 90% at 8% 0%, var(--hd-surface-2) 0%, rgba(255, 253, 246, 0) 55%),
+    radial-gradient(100% 80% at 100% 100%, var(--hd-paper-edge) 0%, rgba(246, 236, 214, 0) 60%);
+  color: var(--isx-ink);
+  font-family: var(--hd-text);
+  letter-spacing: 0.01em;
+}
+html body .isx-root[data-scheme],
+html body .isx-root[data-scheme='dark'],
+html body .isx-root[data-scheme='light'] {
+  --isx-paper: #fbf6ea;
+  --isx-paper-2: #f4ecdb;
+  --isx-ink: #2e2823;
+  --isx-text-2: #574c3f;
+  --isx-text-3: #8b7c67;
+  --isx-text-placeholder: #a99a80;
+  --isx-line: #e0d0b0;
+  --isx-line-subtle: #ecdfc4;
+  --isx-line-strong: #c6b18e;
+  --isx-accent: #cf4a32;
+  --isx-accent-on: #fff8ef;
+  background-color: var(--isx-paper);
+  color: var(--isx-ink);
+}
+
+/* ── 左侧栏：一张贴着的便签 ─────────────────────────────────────────── */
+html body .isx-rail {
+  background:
+    linear-gradient(180deg, var(--hd-rail-veil), rgba(246, 238, 222, 0.9)),
+    var(--isx-paper);
+  border-right: 2px dashed var(--isx-line-strong);
+  box-shadow: 6px 0 18px -14px rgba(46, 40, 35, 0.5);
+}
+html body .isx-brand-name,
+html body .isx-brand-pkg {
+  font-family: var(--hd-hand);
+  letter-spacing: 0.02em;
+}
+html body .isx-brand-mark {
+  border-radius: 9px 4px 10px 5px / 5px 10px 4px 9px;
+  box-shadow: var(--hd-shadow);
+  transform: rotate(-2deg);
+}
+html body .isx-brand-name {
+  font-size: 20px;
+  font-weight: 400;
+}
+html body .isx-brand-pkg {
+  font-family: var(--hd-num);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--isx-text-3);
+}
+html body .isx-railgroup {
+  font-family: var(--hd-num);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--isx-text-3);
+}
+html body .isx-nav {
+  border-radius: 10px 3px 11px 4px / 4px 11px 3px 10px;
+  border: 1.6px solid transparent;
+  color: var(--isx-text-2);
+  font-family: var(--hd-text);
+  font-size: 14px;
+}
+html body .isx-nav:hover {
+  border-color: var(--isx-line);
+  background: var(--hd-hover);
+  transform: rotate(-0.5deg);
+}
+html body .isx-nav.is-on {
+  background: linear-gradient(transparent 6%, var(--hd-marker-soft) 6%, var(--hd-marker-soft) 94%, transparent 94%);
+  border: 1.8px solid var(--isx-ink);
+  color: var(--isx-ink);
+  box-shadow: var(--hd-shadow);
+  transform: rotate(-0.7deg);
+}
+html body .isx-nav.is-on::before {
+  background: var(--hd-red) !important;
+  width: 0 !important;
+}
+html body .isx-nav .count {
+  font-family: var(--hd-num);
+  color: var(--hd-red);
+}
+html body .isx-railthumb {
+  border: 1.6px solid var(--isx-ink);
+  border-radius: 6px 3px 7px 4px / 4px 7px 3px 6px;
+  box-shadow: var(--hd-shadow);
+  transform: rotate(-1.4deg);
+}
+html body .isx-railthumb:nth-child(2n) {
+  transform: rotate(1.6deg);
+}
+html body .isx-railfoot {
+  border-top: 1.5px dashed var(--isx-line);
+  font-family: var(--hd-num);
+  color: var(--isx-text-3);
+}
+
+/* ── 题头 ─────────────────────────────────────────────────────────────── */
+html body .isx-eyebrow {
+  font-family: var(--hd-num);
+  letter-spacing: 0.16em;
+  color: var(--hd-red);
+  border: 1.6px solid var(--hd-red);
+  border-radius: 8px 3px 9px 4px / 4px 9px 3px 8px;
+  padding: 2px 8px;
+  display: inline-block;
+  transform: rotate(-1deg);
+  background: var(--hd-hover);
+}
+html body .isx-eyebrow::before,
+html body .isx-eyebrow::after {
+  display: none;
+}
+html body .isx-head h1 {
+  font-family: var(--hd-hand);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--isx-ink);
+}
+html body .isx-head h1::after {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='8' viewBox='0 0 48 8'><path d='M1 5 Q7 1.4 13 5 T25 5 T37 5 T47 4.4' fill='none' stroke='%23cf4a32' stroke-width='2.2' stroke-linecap='round'/></svg>")
+    repeat-x left center / 48px 8px;
+  height: 8px;
+  width: 210px;
+  opacity: 1;
+}
+html body .isx-head p {
+  font-family: var(--hd-text);
+  color: var(--isx-text-3);
+}
+
+/* ── 额度四格：手绘便签 ───────────────────────────────────────────────── */
+html body .isx-stats {
+  gap: 14px;
+}
+html body .isx-stat {
+  background: var(--hd-surface);
+  border: 1.8px solid var(--isx-ink);
+  border-radius: 14px 5px 16px 7px / 7px 16px 5px 14px;
+  box-shadow: 3px 3px 0 var(--hd-shadow-color);
+  transform: rotate(-0.4deg);
+}
+html body .isx-stat:nth-child(2n) {
+  transform: rotate(0.5deg);
+}
+html body .isx-stat::before {
+  opacity: 0.55 !important;
+}
+html body .isx-stat .k {
+  font-family: var(--hd-num);
+  letter-spacing: 0.12em;
+  color: var(--isx-text-3);
+}
+html body .isx-stat .v {
+  font-family: var(--hd-hand);
+  font-weight: 400;
+}
+html body .isx-stat .sub {
+  font-family: var(--hd-text);
+  color: var(--isx-text-3);
+}
+
+/* ── 分节标题 01 / 02 ─────────────────────────────────────────────────── */
+html body .isx-sec-head {
+  border-bottom: 1.6px dashed var(--isx-line-strong);
+}
+html body .isx-sec-head .num,
+html body .isx-sec-head h2 {
+  font-family: var(--hd-hand);
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+html body .isx-sec-head .num {
+  color: var(--hd-red);
+}
+html body .isx-sec-head .more {
+  font-family: var(--hd-num);
+  color: var(--isx-text-3);
+}
+
+/* ── 按钮：手绘胶囊 + 硬阴影 ──────────────────────────────────────────── */
+html body .isx-btn {
+  border: 1.7px solid var(--isx-ink);
+  border-radius: 11px 4px 12px 5px / 5px 12px 4px 11px;
+  background: var(--hd-surface);
+  color: var(--isx-ink);
+  font-family: var(--hd-text);
+  box-shadow: var(--hd-shadow);
+  transition: transform 0.14s ease, box-shadow 0.14s ease, background 0.14s ease;
+}
+html body .isx-btn:hover {
+  transform: translate(-1px, -1px) rotate(-0.5deg);
+  box-shadow: 3px 3px 0 var(--hd-shadow-color);
+  background: var(--hd-surface);
+}
+html body .isx-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--hd-shadow-color);
+}
+html body .isx-btn.is-accent {
+  background: var(--hd-red);
+  border-color: var(--isx-ink);
+  color: #fff9f2;
+  box-shadow: 2px 2px 0 var(--hd-shadow-strong);
+}
+html body .isx-btn.is-accent:hover {
+  background: #d9553c;
+}
+html body .isx-btn.is-ghost {
+  background: transparent;
+  border-color: var(--isx-line-strong);
+  box-shadow: none;
+  color: var(--isx-text-2);
+}
+html body .isx-btn:disabled {
+  opacity: 0.45;
+  box-shadow: none;
+}
+html body .isx-ibtn {
+  border: 1.5px solid var(--isx-line-strong);
+  border-radius: 8px 3px 9px 4px / 4px 9px 3px 8px;
+  background: var(--hd-surface);
+}
+html body .isx-ibtn:hover {
+  border-color: var(--isx-ink);
+  transform: rotate(-3deg);
+}
+
+/* ── 提示词框：一页方格纸 ─────────────────────────────────────────────── */
+html body .isx-promptbox {
+  background: var(--hd-surface);
+  border: 1.8px solid var(--isx-ink);
+  border-radius: 14px 6px 16px 7px / 7px 16px 6px 14px;
+  box-shadow: 4px 4px 0 var(--hd-shadow-color);
+}
+html body .isx-prompt {
+  background-image:
+    repeating-linear-gradient(0deg, var(--hd-grid-x) 0 1px, transparent 1px 26px),
+    repeating-linear-gradient(90deg, var(--hd-grid-y) 0 1px, transparent 1px 26px);
+  background-position: 0 6px, 0 0;
+  font-family: var(--hd-text);
+  font-size: 15.5px;
+  line-height: 26px;
+  color: var(--isx-ink);
+  padding-top: 4px;
+}
+html body .isx-prompt::placeholder {
+  font-family: var(--hd-text);
+  color: var(--isx-text-placeholder);
+}
+html body .isx-promptfoot {
+  border-top: 1.5px dashed var(--isx-line);
+  background: var(--hd-veil-soft);
+  border-radius: 0 0 14px 7px / 0 0 16px 7px;
+}
+html body .isx-promptfoot .hint,
+html body .isx-promptfoot .note {
+  font-family: var(--hd-text);
+  color: var(--isx-text-3);
+}
+html body .isx-select {
+  border: 1.5px solid var(--isx-line-strong);
+  border-radius: 9px 3px 10px 4px / 4px 10px 3px 9px;
+  background: var(--hd-surface);
+  font-family: var(--hd-text);
+  color: var(--isx-ink);
+  box-shadow: 1px 1px 0 var(--hd-shadow-soft);
+}
+html body .isx-select:hover {
+  border-color: var(--isx-ink);
+}
+html body .isx-example {
+  border: 1.5px dashed var(--isx-line-strong);
+  border-radius: 10px 4px 11px 5px / 5px 11px 4px 10px;
+  background: var(--hd-veil);
+  font-family: var(--hd-text);
+  color: var(--isx-text-2);
+}
+html body .isx-example:hover {
+  background: var(--hd-marker-soft);
+  border-style: solid;
+  color: var(--isx-ink);
+  transform: rotate(-0.6deg);
+}
+html body .isx-note,
+html body .isx-path,
+html body .isx-alert {
+  font-family: var(--hd-text);
+}
+html body .isx-alert {
+  border: 1.6px solid var(--hd-red);
+  border-radius: 10px 4px 11px 5px / 5px 11px 4px 10px;
+  background: rgba(207, 74, 50, 0.08);
+  color: #8e2f1d;
+}
+
+/* ── 模板参考条 / 已套用条 ────────────────────────────────────────────── */
+html body .isx-striphead {
+  font-family: var(--hd-text);
+  color: var(--isx-text-2);
+}
+html body .isx-striphead .more {
+  font-family: var(--hd-num);
+  color: var(--hd-blue);
+}
+html body .isx-stripcard {
+  border: 1.7px solid var(--isx-ink);
+  border-radius: 7px 4px 8px 4px / 4px 8px 4px 7px;
+  box-shadow: 2px 2px 0 var(--hd-shadow-color);
+  transform: rotate(-1.6deg);
+  background: var(--hd-surface);
+}
+html body .isx-stripcard:nth-child(2n) {
+  transform: rotate(1.4deg);
+}
+html body .isx-stripcard .cap {
+  font-family: var(--hd-text) !important;
+  font-size: 9px !important;
+  background: linear-gradient(180deg, transparent, rgba(46, 40, 35, 0.9)) !important;
+}
+html body .isx-stripcard.is-on {
+  outline: 2.5px solid var(--hd-red);
+  outline-offset: 2px;
+}
+html body .isx-stripcard.is-add {
+  border-style: dashed;
+  box-shadow: none;
+  background: var(--hd-veil-soft);
+}
+html body .isx-applied {
+  background: var(--hd-surface);
+  border: 1.8px solid var(--isx-ink);
+  border-left-width: 6px;
+  border-radius: 12px 5px 13px 6px / 6px 13px 5px 12px;
+  box-shadow: 3px 3px 0 var(--hd-shadow-color);
+}
+html body .isx-applied .name {
+  font-family: var(--hd-hand);
+}
+html body .isx-applied .meta {
+  font-family: var(--hd-num);
+  color: var(--isx-text-3);
+}
+html body .isx-applied img {
+  border: 1.5px solid var(--isx-ink);
+  border-radius: 4px;
+}
+html body .isx-refbox {
+  border: 1.8px dashed var(--isx-line-strong);
+  border-radius: 12px 5px 13px 6px / 6px 13px 5px 12px;
+  background: var(--hd-veil-soft);
+  font-family: var(--hd-text);
+}
+html body .isx-refbox .th {
+  border: 1.5px solid var(--isx-ink);
+  border-radius: 4px;
+}
+
+/* ── 模板库：贴纸墙 ───────────────────────────────────────────────────── */
+html body .isx-tabs {
+  border-bottom: 1.6px dashed var(--isx-line-strong);
+}
+html body .isx-tab {
+  font-family: var(--hd-hand);
+  color: var(--isx-text-2);
+}
+html body .isx-tab .n {
+  font-family: var(--hd-num);
+  color: var(--isx-text-3);
+}
+html body .isx-tab.is-on {
+  color: var(--isx-ink);
+}
+html body .isx-tab.is-on::after {
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='7' viewBox='0 0 36 7'><path d='M1 4 Q5 1.2 9 4 T17 4 T25 4 T35 3.6' fill='none' stroke='%23cf4a32' stroke-width='2.4' stroke-linecap='round'/></svg>")
+    repeat-x left center / 36px 7px !important;
+  height: 7px !important;
+}
+html body .isx-chips {
+  gap: 8px;
+}
+html body .isx-chip {
+  border: 1.5px solid var(--isx-line-strong);
+  border-radius: 10px 4px 11px 4px / 4px 11px 4px 10px;
+  background: var(--hd-veil);
+  font-family: var(--hd-text);
+  color: var(--isx-text-2);
+}
+html body .isx-chip .n {
+  font-family: var(--hd-num);
+  color: var(--isx-text-3);
+}
+html body .isx-chip:hover {
+  border-color: var(--isx-ink);
+  transform: rotate(-0.8deg);
+}
+html body .isx-chip.is-on {
+  border-color: var(--isx-ink);
+  background: linear-gradient(transparent 8%, var(--hd-marker-soft) 8%, var(--hd-marker-soft) 92%, transparent 92%);
+  color: var(--isx-ink);
+  box-shadow: 1.5px 1.5px 0 var(--hd-shadow-color);
+}
+html body .isx-searching {
+  border: 1.6px solid var(--isx-line-strong);
+  border-radius: 11px 4px 12px 5px / 5px 12px 4px 11px;
+  background: var(--hd-surface);
+  font-family: var(--hd-text);
+  box-shadow: 1.5px 1.5px 0 var(--hd-shadow-soft);
+}
+html body .isx-searching input {
+  font-family: var(--hd-text);
+}
+html body .isx-filter select {
+  border: 1.5px solid var(--isx-line-strong);
+  border-radius: 9px 3px 10px 4px / 4px 10px 3px 9px;
+  background: var(--hd-surface);
+  font-family: var(--hd-text);
+  box-shadow: 1px 1px 0 var(--hd-shadow-soft);
+}
+html body .isx-libcount {
+  font-family: var(--hd-num);
+  color: var(--isx-text-3);
+}
+html body .isx-credit {
+  border-top: 1.5px dashed var(--isx-line);
+  font-family: var(--hd-text);
+  color: var(--isx-text-3);
+}
+html body .isx-tpls {
+  gap: 22px 20px;
+  padding-top: 6px;
+}
+html body .isx-tpl {
+  background: var(--hd-surface);
+  border: 1.8px solid var(--isx-ink);
+  border-radius: 12px 5px 14px 6px / 6px 14px 5px 12px;
+  box-shadow: 3px 4px 0 var(--hd-shadow-color);
+  transform: rotate(-0.5deg);
+}
+html body .isx-tpl:nth-child(4n + 2) {
+  transform: rotate(0.6deg);
+}
+html body .isx-tpl:nth-child(4n + 3) {
+  transform: rotate(-0.9deg);
+}
+html body .isx-tpl:nth-child(4n + 4) {
+  transform: rotate(0.35deg);
+}
+html body .isx-tpl:hover {
+  transform: translateY(-4px) rotate(0deg) !important;
+  box-shadow: 5px 7px 0 var(--hd-shadow-color);
+  z-index: 3;
+}
+html body .isx-tpl::before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  width: 58px;
+  height: 16px;
+  margin-left: -29px;
+  background: var(--hd-tape-bg);
+  border-left: 1px dashed var(--hd-tape-border);
+  border-right: 1px dashed var(--hd-tape-border);
+  transform: rotate(-3deg);
+  z-index: 4;
+  pointer-events: none;
+}
+html body .isx-tpl:nth-child(2n)::before {
+  transform: rotate(2.4deg);
+}
+html body .isx-tplimg {
+  border-bottom: 1.6px dashed var(--isx-line-strong);
+  border-radius: 12px 5px 0 0 / 6px 14px 0 0;
+}
+html body .isx-tplimg .tag {
+  font-family: var(--hd-num);
+  background: var(--hd-red) !important;
+  border-radius: 6px 3px 7px 3px / 3px 7px 3px 6px;
+  transform: rotate(-2deg);
+  box-shadow: 1px 1px 0 var(--hd-shadow-strong);
+}
+html body .isx-tplid {
+  font-family: var(--hd-num);
+  color: var(--hd-blue);
+  letter-spacing: 0.04em;
+}
+html body .isx-tplname {
+  font-family: var(--hd-hand);
+  font-weight: 400;
+  color: var(--isx-ink);
+}
+html body .isx-tplmeta {
+  font-family: var(--hd-text);
+  color: var(--isx-text-3);
+}
+html body .isx-tplacts {
+  border-top: 1.5px dashed var(--isx-line);
+}
+html body .isx-tplacts .isx-btn {
+  font-size: 12.5px;
+  box-shadow: 1.5px 1.5px 0 var(--hd-shadow-color);
+}
+html body .isx-fav {
+  border: 1.6px solid var(--isx-ink);
+  background: var(--hd-surface) !important;
+  color: var(--isx-text-3) !important;
+  backdrop-filter: none;
+  opacity: 1;
+  transform: rotate(4deg);
+  box-shadow: 1px 1px 0 var(--hd-shadow-color);
+}
+html body .isx-fav.is-on {
+  color: #b8860b !important;
+  background: var(--hd-marker) !important;
+  border-color: var(--isx-ink);
+  transform: rotate(-6deg) scale(1.08);
+}
+
+/* ── 历史作品：散落的照片 ─────────────────────────────────────────────── */
+html body .isx-work {
+  background: var(--hd-surface);
+  border: 1.8px solid var(--isx-ink);
+  border-radius: 10px 5px 12px 5px / 5px 12px 5px 10px;
+  box-shadow: 3px 4px 0 var(--hd-shadow-color);
+  transform: rotate(-0.4deg);
+}
+html body .isx-work:nth-child(2n) {
+  transform: rotate(0.5deg);
+}
+html body .isx-work .meta,
+html body .isx-work .prompt {
+  font-family: var(--hd-text);
+}
+html body .isx-work .pill,
+html body .isx-pill {
+  font-family: var(--hd-num);
+  border: 1.4px solid var(--isx-line-strong);
+  border-radius: 8px 3px 9px 4px / 4px 9px 3px 8px;
+  background: var(--hd-surface);
+}
+html body .isx-pill.is-on {
+  border-color: var(--isx-ink);
+  background: var(--hd-marker-soft);
+  color: var(--isx-ink);
+}
+html body .isx-pill.is-planned {
+  border-style: dashed;
+  color: var(--isx-text-3);
+}
+
+/* ── 设置面板 ─────────────────────────────────────────────────────────── */
+html body .isx-field label,
+html body .isx-panel .k {
+  font-family: var(--hd-text);
+  color: var(--isx-text-2);
+}
+html body .isx-input {
+  border: 1.6px solid var(--isx-line-strong);
+  border-radius: 10px 4px 11px 4px / 4px 11px 4px 10px;
+  background: var(--hd-surface);
+  font-family: var(--hd-text);
+  box-shadow: 1.5px 1.5px 0 var(--hd-shadow-soft);
+}
+html body .isx-syncbar {
+  background: var(--isx-line-subtle);
+  border-radius: 4px;
+  height: 6px;
+}
+html body .isx-syncbar i {
+  background: repeating-linear-gradient(115deg, var(--hd-red) 0 6px, #e2705a 6px 12px);
+  border-radius: 4px;
+}
+
+/* ── 弹层：便签纸 + 胶带 ──────────────────────────────────────────────── */
+html body .isx-scrim {
+  background: rgba(58, 46, 33, 0.42) !important;
+  backdrop-filter: blur(1.5px);
+}
+html body .isx-dialog,
+html body .isx-preview {
+  background: var(--isx-paper);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.05'/></svg>");
+  border: 1.8px solid var(--isx-ink);
+  border-radius: 16px 6px 18px 7px / 7px 18px 6px 16px;
+  box-shadow: 6px 6px 0 var(--hd-shadow-color);
+  overflow: hidden;
+}
+html body .isx-dlg-head,
+html body .isx-pv-head {
+  background: var(--hd-veil);
+  border-bottom: 1.6px dashed var(--isx-line-strong);
+}
+html body .isx-dlg-head .t,
+html body .isx-pv-head .t {
+  font-family: var(--hd-hand);
+  font-weight: 400;
+}
+html body .isx-dlg-head .id,
+html body .isx-pv-head .id {
+  font-family: var(--hd-num);
+  border: 1.5px solid var(--hd-red);
+  border-radius: 7px 3px 8px 3px / 3px 8px 3px 7px;
+  color: var(--hd-red);
+  background: var(--hd-surface);
+  transform: rotate(-2deg);
+}
+html body .isx-dlg-sub,
+html body .isx-pv-head .sub {
+  font-family: var(--hd-text);
+  color: var(--isx-text-3);
+}
+html body .isx-dlg-fig img,
+html body .isx-pv-fig img {
+  border: 1.8px solid var(--isx-ink);
+  border-radius: 8px 4px 9px 4px / 4px 9px 4px 8px;
+  box-shadow: 3px 3px 0 rgba(46, 40, 35, 0.15);
+  background: var(--hd-surface);
+}
+html body .isx-slot {
+  background: var(--hd-surface);
+  border: 1.6px solid var(--isx-line-strong);
+  border-radius: 10px 4px 11px 5px / 5px 11px 4px 10px;
+  box-shadow: 1.5px 1.5px 0 var(--hd-shadow-soft);
+}
+html body .isx-slot .k {
+  font-family: var(--hd-num);
+  color: var(--isx-text-3);
+}
+html body .isx-slot .v {
+  font-family: var(--hd-text);
+  color: var(--isx-ink);
+}
+html body .isx-slot .v em {
+  font-family: var(--hd-num);
+  color: var(--hd-blue);
+}
+html body .isx-slot:hover {
+  border-color: var(--isx-ink);
+  transform: rotate(-0.4deg);
+}
+html body .isx-paramgrid {
+  gap: 10px;
+}
+html body .isx-param {
+  border: 1.5px solid var(--isx-line-strong);
+  border-radius: 9px 4px 10px 4px / 4px 10px 4px 9px;
+  background: var(--hd-surface);
+}
+html body .isx-param .k,
+html body .isx-k {
+  font-family: var(--hd-num);
+  color: var(--isx-text-3);
+  border: none;
+  background: none;
+}
+html body .isx-param .v {
+  font-family: var(--hd-text);
+  color: var(--isx-ink);
+}
+html body .isx-ta,
+html body .isx-input-line {
+  border: 1.6px solid var(--isx-line-strong);
+  border-radius: 11px 4px 12px 5px / 5px 12px 4px 11px;
+  background:
+    repeating-linear-gradient(0deg, var(--hd-grid-soft) 0 1px, transparent 1px 24px),
+    var(--hd-surface);
+  font-family: var(--hd-text);
+  font-size: 14px;
+  line-height: 24px;
+  padding-left: 10px;
+}
+html body .isx-pre {
+  border: 1.6px solid var(--isx-line-strong);
+  border-radius: 11px 4px 12px 5px / 5px 12px 4px 11px;
+  background: var(--hd-surface);
+  font-family: var(--hd-text);
+  font-size: 12.5px;
+  line-height: 1.85;
+  color: var(--isx-text-2);
+}
+html body .isx-pickstep {
+  border-top: 1.6px dashed var(--isx-line-strong);
+}
+html body .isx-pickstep .isx-slot {
+  box-shadow: none;
+}
+html body .isx-dlg-foot,
+html body .isx-pv-foot {
+  border-top: 1.6px dashed var(--isx-line-strong);
+  background: var(--hd-veil-soft);
+}
+html body .isx-dlg-foot .hint,
+html body .isx-pv-cap {
+  font-family: var(--hd-text);
+  color: var(--isx-text-3);
+}
+html body .isx-pv-info .isx-param {
+  background: var(--hd-surface);
+}
+
+/* ── 全屏查看 / 提示 ──────────────────────────────────────────────────── */
+html body .isx-viewer {
+  background: rgba(46, 40, 35, 0.86);
+}
+html body .isx-empty,
+html body .isx-libempty {
+  font-family: var(--hd-text);
+  color: var(--isx-text-3);
+}
+html body .isx-toast {
+  font-family: var(--hd-text);
+  background: var(--isx-ink);
+  border: 1.6px solid var(--isx-ink);
+  border-radius: 11px 4px 12px 5px / 5px 12px 4px 11px;
+  box-shadow: 3px 3px 0 var(--hd-shadow-strong);
+}
+
+/* ── 手绘图标：描边加粗一点 ───────────────────────────────────────────── */
+html body .isx-nav svg,
+html body .isx-ibtn svg,
+html body .isx-btn svg {
+  stroke-width: 2.1;
+}
+html body .isx-nav.is-on svg {
+  transform: rotate(-6deg);
+}
+
+/* 滚动条也换个手绘色 */
+html body .isx-main::-webkit-scrollbar-thumb,
+html body .isx-rail::-webkit-scrollbar-thumb {
+  background: var(--isx-line-strong);
+  border-radius: 6px;
+}
+
+/* ============================================================================
+   第二轮：去掉现代渐变条、加涂鸦装饰、对齐手写数字
+   ========================================================================== */
+
+/* 额度卡顶部彩条 → 朱红马克笔小横线 */
+html body .isx-stat {
+  position: relative;
+  padding-top: 20px;
+}
+html body .isx-stat::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 16px !important;
+  right: auto !important;
+  top: 10px !important;
+  width: 30px !important;
+  height: 3px !important;
+  border-radius: 2px !important;
+  background: var(--hd-red) !important;
+  opacity: 0.85 !important;
+  transform: rotate(-1.5deg);
+  display: block !important;
+}
+html body .isx-stat .v {
+  font-size: 27px;
+  line-height: 1.16;
+}
+html body .isx-stat .k {
+  font-size: 10px;
+}
+html body .isx-stat .sub {
+  font-size: 12px;
+}
+
+/* 左侧栏计数：手写体基线对齐 */
+html body .isx-nav .count {
+  font-size: 11.5px;
+  line-height: 1;
+  position: relative;
+  top: -1px;
+  opacity: 0.9;
+}
+
+/* 题头：标题右侧一颗手绘小星 */
+html body .isx-head {
+  position: relative;
+}
+html body .isx-head h1::before {
+  content: '';
+  position: absolute;
+  right: -34px;
+  top: 6px;
+  width: 22px;
+  height: 22px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2.6 13.9 9.3 20.6 11.2 13.9 13.1 12 19.8 10.1 13.1 3.4 11.2 10.1 9.3 Z' fill='none' stroke='%23cf4a32' stroke-width='1.7' stroke-linejoin='round'/></svg>")
+    no-repeat center / contain;
+  transform: rotate(9deg);
+  opacity: 0.9;
+}
+
+/* 分节编号 01：手绘椭圆圈 */
+html body .isx-sec-head .num {
+  position: relative;
+  display: inline-block;
+  padding: 0 6px;
+  margin-left: -6px;
+}
+html body .isx-sec-head .num::before {
+  content: '';
+  position: absolute;
+  inset: -4px -3px -3px -4px;
+  border: 1.7px solid rgba(207, 74, 50, 0.75);
+  border-radius: 50% 46% 52% 48% / 52% 48% 54% 46%;
+  transform: rotate(-6deg);
+}
+
+/* 「全部 60 →」的手绘箭头 */
+html body .isx-striphead .more,
+html body .isx-sec-head .more {
+  letter-spacing: 0.02em;
+}
+
+/* 提示词方格纸：首行贴格线 */
+html body .isx-prompt {
+  padding-top: 6px;
+}
+
+/* 生成按钮：加手绘双线感 */
+html body .isx-btn.is-accent {
+  border-width: 2px;
+  box-shadow: 2px 2px 0 var(--hd-shadow-strong), inset 0 0 0 1.4px var(--hd-inset);
+}
+
+/* 试试这些：前面加一支手绘小铅笔 */
+html body .isx-examples {
+  position: relative;
+}
+html body .isx-examples::before {
+  content: '✎';
+  font-family: var(--hd-hand);
+  color: var(--hd-red);
+  margin-right: 4px;
+  font-size: 13px;
+}
+
+/* 空状态：虚线涂鸦框 */
+html body .isx-empty,
+html body .isx-libempty {
+  border: 1.8px dashed var(--isx-line-strong);
+  border-radius: 14px 6px 15px 6px / 6px 15px 6px 14px;
+  padding: 34px 10px;
+  text-align: center;
+  background: var(--hd-veil-soft);
+}
+
+/* ============================================================================
+   第三轮：便签色、星标归位、间距与图标
+   ========================================================================== */
+
+/* 标题变 inline-block，星标贴着文字 */
+html body .isx-head h1 {
+  display: inline-block;
+}
+html body .isx-head h1::before {
+  right: -30px;
+  top: 0;
+}
+
+/* 四张便签：不同纸色（手账感） */
+html body .isx-stat {
+  background: var(--hd-surface-2);
+}
+html body .isx-stat:nth-child(1) {
+  background: linear-gradient(160deg, var(--hd-surface-2), var(--hd-tint-1));
+}
+html body .isx-stat:nth-child(2) {
+  background: linear-gradient(160deg, var(--hd-surface-2), #fbe9e3);
+  transform: rotate(0.5deg);
+}
+html body .isx-stat:nth-child(3) {
+  background: linear-gradient(160deg, var(--hd-surface-2), #e9f0f5);
+  transform: rotate(-0.6deg);
+}
+html body .isx-stat:nth-child(4) {
+  background: linear-gradient(160deg, var(--hd-surface-2), #eef2e2);
+  transform: rotate(0.35deg);
+}
+html body .isx-stat:nth-child(2)::before {
+  background: #d9735a !important;
+}
+html body .isx-stat:nth-child(3)::before {
+  background: #5b87a8 !important;
+}
+html body .isx-stat:nth-child(4)::before {
+  background: #7d9660 !important;
+}
+
+/* 参考图框与提示词框之间留气口 */
+html body .isx-refbox {
+  margin-bottom: 12px;
+}
+
+/* 「试试这些」前面的手绘铅笔换成 SVG，避免缺字 */
+html body .isx-examples::before {
+  content: '' !important;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+  vertical-align: -2px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M4 20.2 4.9 16 16.2 4.7a1.9 1.9 0 0 1 2.7 0l.4.4a1.9 1.9 0 0 1 0 2.7L8 19.1 4 20.2Z' fill='none' stroke='%23cf4a32' stroke-width='1.6' stroke-linejoin='round'/></svg>")
+    no-repeat center / contain;
+  transform: rotate(-12deg);
+}
+
+/* 纸面暗角，增强「一张纸」的整体感 */
+html body .isx-main::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(120% 92% at 50% 6%, rgba(255, 255, 255, 0) 58%, rgba(150, 118, 62, 0.13) 100%);
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+/* 顶部右侧的语言切换做成手写批注 */
+html body .isx-langbar,
+html body .isx-head .isx-lang {
+  font-family: var(--hd-text);
+}
+
+/* ============================================================================
+   第四轮：题头排版修正 + 便签淡一点 + 暗角减弱
+   ========================================================================== */
+html body .isx-eyebrow {
+  display: block;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+html body .isx-head h1 {
+  display: block;
+  width: fit-content;
+}
+html body .isx-head h1::before {
+  right: -32px;
+  top: 2px;
+}
+html body .isx-stat:nth-child(2) {
+  background: linear-gradient(160deg, var(--hd-surface-2), var(--hd-tint-2));
+}
+html body .isx-stat:nth-child(3) {
+  background: linear-gradient(160deg, var(--hd-surface-2), var(--hd-tint-3));
+}
+html body .isx-stat:nth-child(4) {
+  background: linear-gradient(160deg, var(--hd-surface-2), var(--hd-tint-4));
+}
+html body .isx-main::after {
+  background: radial-gradient(125% 95% at 50% 4%, rgba(255, 255, 255, 0) 66%, var(--hd-vignette) 100%);
+}
+
+/* ============================================================================
+   第五轮：星标改用标题背景图，避免被 flex 拉远
+   ========================================================================== */
+html body .isx-head h1 {
+  position: relative;
+  padding-right: 40px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2.6 13.9 9.3 20.6 11.2 13.9 13.1 12 19.8 10.1 13.1 3.4 11.2 10.1 9.3 Z' fill='none' stroke='%23cf4a32' stroke-width='1.7' stroke-linejoin='round'/></svg>")
+    no-repeat right 8px top 6px / 21px 21px;
+}
+html body .isx-head h1::before {
+  display: none !important;
+}
+
+/* ============================================================================
+   第六轮：正文字体换成更清晰的娃娃体、遮罩加深、下拉换手绘箭头、弹窗胶带
+   ========================================================================== */
+html body {
+  --hd-text: 'Wawati SC', 'HanziPen SC', 'Hannotate SC', sans-serif;
+}
+
+html body .isx-scrim {
+  background: var(--hd-scrim) !important;
+}
+
+/* 下拉：隐藏原生箭头，画一个手绘小三角 */
+html body .isx-select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 26px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M3.4 6 8 11 12.6 6' fill='none' stroke='%232e2823' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 13px 13px;
+}
+html body .isx-filter select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 24px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M3.4 6 8 11 12.6 6' fill='none' stroke='%232e2823' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: 12px 12px;
+  background-color: var(--hd-surface);
+}
+
+/* 弹窗顶部贴一条胶带 */
+html body .isx-dialog::before,
+html body .isx-preview::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  width: 92px;
+  height: 20px;
+  margin-left: -46px;
+  background: var(--hd-tape-bg);
+  border-left: 1px dashed var(--hd-tape-border);
+  border-right: 1px dashed var(--hd-tape-border);
+  transform: rotate(-1.6deg);
+  z-index: 6;
+  pointer-events: none;
+}
+html body .isx-dialog,
+html body .isx-preview {
+  position: relative;
+}
+
+/* 弹窗头部标题前画个手绘小圈 */
+html body .isx-dlg-head .t::before {
+  content: '';
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin-right: 8px;
+  vertical-align: -1px;
+  border: 1.8px solid var(--hd-red);
+  border-radius: 50% 46% 52% 48% / 52% 48% 54% 46%;
+  transform: rotate(-8deg);
+}
+
+/* ============================================================================
+   第七轮：正文回到手札体，小字注释换系统字保证清晰
+   ========================================================================== */
+html body {
+  --hd-text: 'Hannotate SC', 'HanziPen SC', sans-serif;
+  --hd-note: 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+}
+
+/* 正文可读性微调 */
+html body .isx-prompt {
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--hd-text-strong);
+}
+html body .isx-slot .v,
+html body .isx-param .v {
+  color: var(--hd-text-strong);
+}
+
+/* 注释类小字：系统字，清晰优先 */
+html body .isx-path,
+html body .isx-note,
+html body .isx-credit,
+html body .isx-dlg-fig figcaption,
+html body .isx-pv-cap,
+html body .isx-stripcard .cap,
+html body .isx-railfoot,
+html body .isx-libcount,
+html body .isx-tplmeta,
+html body .isx-promptfoot .hint,
+html body .isx-promptfoot .note,
+html body .isx-dlg-foot .hint {
+  font-family: var(--hd-note);
+  letter-spacing: 0;
+}
+html body .isx-railfoot {
+  font-family: var(--hd-num);
+}
+
+/* 弹窗头圈圈位置微调 */
+html body .isx-dlg-head .t::before {
+  margin-right: 9px;
+}
+
+/* 长段提示词：换成更清晰的娃娃体 */
+html body .isx-pre {
+  font-family: 'Wawati SC', 'Hannotate SC', sans-serif;
+  font-size: 13px;
+  line-height: 1.95;
+  color: var(--hd-text-strong);
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================================
+   深色主题：黑板与牛皮纸
+   ────────────────────────────────────────────────────────────────────────────
+   手绘风在深色下换一套物质：深咖啡纸 + 粉笔白线 + 亮朱砂。变量整体切换，
+   结构性规则（边框、旋转、胶带、方格纸）自动沿用，只另外覆盖少量硬编码的
+   SVG 描边色与半透明遮罩。
+   ========================================================================== */
+
+html body .isx-root[data-scheme='dark'],
+html body .isx-root[data-scheme='dark'][data-theme],
+html body .isx-root[data-scheme='dark'].isx-root {
+  --isx-paper: #221c16;
+  --isx-paper-2: #2a231c;
+  --isx-ink: #f3ebdc;
+  --isx-text-2: #dbceb8;
+  --isx-text-3: #a2947c;
+  --isx-text-placeholder: #857760;
+  --isx-line: #4a3f32;
+  --isx-line-subtle: #382f26;
+  --isx-line-strong: #6d5c46;
+  --isx-accent: #e8694f;
+  --isx-accent-on: #26170f;
+  --isx-grey: #5b4f3f;
+  --hd-marker: #7c6626;
+  --hd-marker-soft: rgba(124, 102, 38, 0.5);
+  --hd-red: #ea6c52;
+  --hd-blue: #86aed0;
+
+  --hd-surface: #2b241c;
+  --hd-surface-2: #312920;
+  --hd-text-strong: #f7f0e2;
+  --hd-tint-1: #322b1e;
+  --hd-tint-2: #33241f;
+  --hd-tint-3: #232b31;
+  --hd-tint-4: #272c22;
+  --hd-tape-bg: rgba(146, 121, 64, 0.45);
+  --hd-tape-border: rgba(206, 184, 130, 0.2);
+  --hd-grid-x: rgba(150, 178, 205, 0.1);
+  --hd-grid-y: rgba(150, 178, 205, 0.06);
+  --hd-grid-soft: rgba(150, 178, 205, 0.09);
+  --hd-shadow-color: rgba(0, 0, 0, 0.45);
+  --hd-shadow-soft: rgba(0, 0, 0, 0.3);
+  --hd-shadow-strong: rgba(0, 0, 0, 0.6);
+  --hd-scrim: rgba(10, 8, 5, 0.68);
+  --hd-vignette: rgba(0, 0, 0, 0.3);
+  --hd-noise-opacity: 0.075;
+  --hd-paper-glow: #2b241d;
+  --hd-paper-edge: #17120e;
+  --hd-veil: rgba(43, 36, 28, 0.82);
+  --hd-veil-soft: rgba(38, 32, 25, 0.75);
+  --hd-rail-veil: rgba(34, 28, 22, 0.92);
+  --hd-hover: rgba(255, 255, 255, 0.06);
+  --hd-inset: rgba(255, 246, 230, 0.14);
+}
+
+/* 纸面：深咖啡 + 更明显的颗粒 */
+html body .isx-root[data-scheme='dark'] {
+  background-color: var(--isx-paper);
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.08'/></svg>"),
+    radial-gradient(120% 90% at 8% 0%, var(--hd-paper-glow) 0%, rgba(43, 36, 29, 0) 55%),
+    radial-gradient(100% 80% at 100% 100%, var(--hd-paper-edge) 0%, rgba(23, 18, 14, 0) 60%);
+}
+
+/* 深色下细弱的白色高光会脏，压掉 */
+html body .isx-root[data-scheme='dark'] .isx-nav:hover,
+html body .isx-root[data-scheme='dark'] .isx-btn:hover,
+html body .isx-root[data-scheme='dark'] .isx-eyebrow,
+html body .isx-root[data-scheme='dark'] .isx-chip:hover {
+  background-color: var(--hd-hover);
+}
+
+/* 手绘小三角（下拉箭头）换粉笔白描边 */
+html body .isx-root[data-scheme='dark'] .isx-select,
+html body .isx-root[data-scheme='dark'] .isx-filter select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M3.4 6 8 11 12.6 6' fill='none' stroke='%23f3ebdc' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 13px 13px;
+}
+html body .isx-root[data-scheme='dark'] .isx-filter select {
+  background-position: right 6px center;
+  background-size: 12px 12px;
+  background-color: var(--hd-surface);
+}
+
+/* 波浪线 / 手绘星 / 铅笔 / 圈：描边提亮到朱砂亮色 */
+html body .isx-root[data-scheme='dark'] .isx-head h1::after {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='8' viewBox='0 0 48 8'><path d='M1 5 Q7 1.4 13 5 T25 5 T37 5 T47 4.4' fill='none' stroke='%23ea6c52' stroke-width='2.2' stroke-linecap='round'/></svg>");
+}
+html body .isx-root[data-scheme='dark'] .isx-tab.is-on::after {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='7' viewBox='0 0 36 7'><path d='M1 4 Q5 1.2 9 4 T17 4 T25 4 T35 3.6' fill='none' stroke='%23ea6c52' stroke-width='2.4' stroke-linecap='round'/></svg>");
+}
+html body .isx-root[data-scheme='dark'] .isx-head h1 {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M12 2.6 13.9 9.3 20.6 11.2 13.9 13.1 12 19.8 10.1 13.1 3.4 11.2 10.1 9.3 Z' fill='none' stroke='%23ea6c52' stroke-width='1.7' stroke-linejoin='round'/></svg>");
+}
+html body .isx-root[data-scheme='dark'] .isx-examples::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M4 20.2 4.9 16 16.2 4.7a1.9 1.9 0 0 1 2.7 0l.4.4a1.9 1.9 0 0 1 0 2.7L8 19.1 4 20.2Z' fill='none' stroke='%23ea6c52' stroke-width='1.6' stroke-linejoin='round'/></svg>");
+}
+html body .isx-root[data-scheme='dark'] .isx-sec-head .num::before {
+  border-color: rgba(234, 108, 82, 0.8);
+}
+
+/* 空状态、遮罩与暗角 */
+html body .isx-root[data-scheme='dark'] .isx-empty,
+html body .isx-root[data-scheme='dark'] .isx-libempty {
+  background: rgba(43, 36, 28, 0.55);
+}
+html body .isx-root[data-scheme='dark'] .isx-main::after {
+  background: radial-gradient(125% 95% at 50% 4%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.22) 100%);
+}
+html body .isx-root[data-scheme='dark'] .isx-toast {
+  background: #15110d;
+  border-color: #6d5c46;
+  color: var(--isx-ink);
+}
+
+/* 额度便签：深色版四张纸 */
+html body .isx-root[data-scheme='dark'] .isx-stat {
+  background: var(--hd-surface-2);
+}
+html body .isx-root[data-scheme='dark'] .isx-stat:nth-child(1) {
+  background: linear-gradient(160deg, #322a1d, #2b241c);
+}
+html body .isx-root[data-scheme='dark'] .isx-stat:nth-child(2) {
+  background: linear-gradient(160deg, #33251f, #2b241c);
+}
+html body .isx-root[data-scheme='dark'] .isx-stat:nth-child(3) {
+  background: linear-gradient(160deg, #232b31, #2b241c);
+}
+html body .isx-root[data-scheme='dark'] .isx-stat:nth-child(4) {
+  background: linear-gradient(160deg, #272c22, #2b241c);
+}
+
+/* 左侧栏：暗一档，像贴在黑板边上的纸 */
+html body .isx-root[data-scheme='dark'] .isx-rail {
+  background:
+    linear-gradient(180deg, rgba(38, 31, 24, 0.94), rgba(28, 23, 18, 0.94)),
+    var(--isx-paper);
+  border-right-color: var(--isx-line-strong);
+}
+html body .isx-root[data-scheme='dark'] .isx-nav.is-on {
+  background: linear-gradient(transparent 6%, rgba(124, 102, 38, 0.42) 6%, rgba(124, 102, 38, 0.42) 94%, transparent 94%);
+  color: var(--isx-ink);
+}
+html body .isx-root[data-scheme='dark'] .isx-chip.is-on {
+  background: linear-gradient(transparent 8%, rgba(124, 102, 38, 0.42) 8%, rgba(124, 102, 38, 0.42) 92%, transparent 92%);
+}
+
+/* 深色弹层：单独给一份噪点与纸底（SVG 属性不能吃 CSS 变量，故此处重写整层） */
+html body .isx-root[data-scheme='dark'] .isx-dialog,
+html body .isx-root[data-scheme='dark'] .isx-preview {
+  background-color: #251f18;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/><feColorMatrix type='saturate' values='0'/></filter><rect width='160' height='160' filter='url(%23n)' opacity='0.07'/></svg>"),
+    radial-gradient(120% 90% at 50% 0%, rgba(60, 50, 39, 0.9) 0%, rgba(37, 31, 24, 0) 70%);
+  border-color: #6d5c46;
+  color: var(--isx-ink);
+}
+html body .isx-root[data-scheme='dark'] .isx-dlg-head,
+html body .isx-root[data-scheme='dark'] .isx-pv-head {
+  background: rgba(43, 36, 28, 0.72);
+}
+html body .isx-root[data-scheme='dark'] .isx-dlg-foot,
+html body .isx-root[data-scheme='dark'] .isx-pv-foot {
+  background: rgba(38, 32, 25, 0.8);
+}
+html body .isx-root[data-scheme='dark'] .isx-dialog .isx-k,
+html body .isx-root[data-scheme='dark'] .isx-preview .isx-k,
+html body .isx-root[data-scheme='dark'] .isx-slot .k,
+html body .isx-root[data-scheme='dark'] .isx-param .k {
+  color: var(--isx-text-3);
+}
+html body .isx-root[data-scheme='dark'] .isx-dialog input,
+html body .isx-root[data-scheme='dark'] .isx-dialog textarea,
+html body .isx-root[data-scheme='dark'] .isx-preview input,
+html body .isx-root[data-scheme='dark'] .isx-preview textarea {
+  color: var(--isx-ink);
+}
+html body .isx-root[data-scheme='dark'] .isx-pre {
+  background: #2a231c;
+  color: #e8dfcd;
+}
+html body .isx-root[data-scheme='dark'] .isx-ta,
+html body .isx-root[data-scheme='dark'] .isx-input-line {
+  background-color: #2a231c;
+  color: var(--isx-ink);
+}

@@ -2,3 +2,7 @@ node_modules/
 *.log
 .DS_Store
 test/tmp/
+.playwright-cli/
+
+# 设计稿与手绘皮肤评审图（体积大，仅本地保留；源 svg/html/css 仍然提交）
+docs/design/**/*.png

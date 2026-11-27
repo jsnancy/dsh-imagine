@@ -1,0 +1,14 @@
+{
+ "version": "1.9.13",
+ "author": "yang0",
+ "repo": "https://github.com/yang0/handraw-style",
+ "license": "MIT (with attribution requirement)",
+ "builtAt": "2026-11-27T01:46:13.405Z",
+ "counts": {
+  "style": 372,
+  "layout": 170,
+  "color": 36,
+  "tone": 16,
+  "curated": 60
+ }
+}
